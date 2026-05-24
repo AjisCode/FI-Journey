@@ -261,6 +261,19 @@ body {
   color: #fbbf24;
 }
 
+.portfolio-card a,
+.timeline-card a,
+.future-card a {
+  color: #fbbf24;
+  text-decoration: none;
+}
+
+.portfolio-card a:hover,
+.timeline-card a:hover,
+.future-card a:hover {
+  text-decoration: underline;
+}
+
 footer {
   text-align: center;
   padding: 30px;
