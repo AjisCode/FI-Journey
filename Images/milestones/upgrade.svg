@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240">
+  <defs>
+    <linearGradient id="ux" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="240" rx="32" fill="#0b122b" />
+  <rect x="80" y="60" width="200" height="120" rx="24" fill="url(#ux)" opacity="0.9" />
+  <path d="M140 110 L180 150 L220 110" fill="none" stroke="#0b122b" stroke-width="18" stroke-linecap="round" />
+  <path d="M180 150 L180 190" fill="none" stroke="#0b122b" stroke-width="18" stroke-linecap="round" />
+  <text x="50%" y="78%" fill="#0b122b" font-family="Inter, sans-serif" font-size="34" text-anchor="middle" dominant-baseline="middle">Upgrade</text>
+</svg>

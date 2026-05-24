@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240">
+  <defs>
+    <linearGradient id="fx" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="240" rx="32" fill="#0b122b" />
+  <path d="M70 170 L150 90 L240 110 L300 70" fill="none" stroke="url(#fx)" stroke-width="18" stroke-linecap="round" />
+  <circle cx="150" cy="90" r="24" fill="#fff" />
+  <text x="50%" y="68%" fill="#fff" font-family="Inter, sans-serif" font-size="38" text-anchor="middle" dominant-baseline="middle">Flight</text>
+</svg>

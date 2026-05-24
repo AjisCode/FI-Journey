@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240">
+  <defs>
+    <linearGradient id="bx" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="240" rx="32" fill="#0b122b" />
+  <path d="M80 120h200v80H80z" fill="url(#bx)" opacity="0.86" />
+  <circle cx="120" cy="205" r="18" fill="#fff" opacity="0.9" />
+  <circle cx="240" cy="205" r="18" fill="#fff" opacity="0.9" />
+  <text x="50%" y="52%" fill="#fff" font-family="Inter, sans-serif" font-size="36" text-anchor="middle" dominant-baseline="middle">Bus</text>
+</svg>

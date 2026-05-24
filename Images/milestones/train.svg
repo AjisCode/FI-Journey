@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240">
+  <defs>
+    <linearGradient id="rx" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#4ade80" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="240" rx="32" fill="#0b122b" />
+  <rect x="60" y="90" width="240" height="80" rx="24" fill="url(#rx)" opacity="0.88" />
+  <circle cx="100" cy="190" r="20" fill="#fff" />
+  <circle cx="260" cy="190" r="20" fill="#fff" />
+  <text x="50%" y="50%" fill="#0b122b" font-family="Inter, sans-serif" font-size="36" text-anchor="middle" dominant-baseline="middle" font-weight="700">Train</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240">
+  <defs>
+    <linearGradient id="kx" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="240" rx="32" fill="#0b122b" />
+  <path d="M180 50 L220 145 L200 190 L160 190 L140 145 Z" fill="url(#kx)" />
+  <circle cx="180" cy="110" r="18" fill="#fff" />
+  <text x="50%" y="78%" fill="#fff" font-family="Inter, sans-serif" font-size="36" text-anchor="middle" dominant-baseline="middle">Rocket</text>
+</svg>
