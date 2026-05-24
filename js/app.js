@@ -2,6 +2,12 @@
 
 const FI_JOURNEY_STATIC_PASSWORD = 'Freedom2026';
 const FI_JOURNEY_AUTH_KEY = 'fiJourneyAuthenticated';
+const FI_JOURNEY_PROTECTED_PAGES = [
+  'portfolio.html',
+  'bucket-strategy.html',
+  'swp.html',
+  'journey.html'
+];
 
 console.log('FI Journey Website Loaded Successfully');
 
@@ -18,6 +24,11 @@ function initializeNavigation() {
 }
 
 function checkAuth() {
+  const pageName = window.location.pathname.split('/').pop();
+  if (!FI_JOURNEY_PROTECTED_PAGES.includes(pageName)) {
+    return;
+  }
+
   const isAuthenticated = sessionStorage.getItem(FI_JOURNEY_AUTH_KEY) === 'true';
   if (isAuthenticated) {
     return;
