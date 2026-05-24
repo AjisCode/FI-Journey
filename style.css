@@ -71,6 +71,19 @@ body {
   gap: 20px;
 }
 
+.future-preview {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.future-preview img {
+  max-width: 100%;
+  border-radius: 20px;
+  border: 1px solid #374151;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
 .timeline-card,
 .portfolio-card,
 .future-card {
