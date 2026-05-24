@@ -123,36 +123,86 @@
   </footer>
 
   <script src="js/app.js"></script>
-  <script>
-    // Reading list progress tracker
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
+    import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAoHk7G177KdZfo3XCp_vtJm73ztM3pwIM",
+      authDomain: "fi-journey-bbce6.firebaseapp.com",
+      databaseURL: "https://fi-journey-bbce6-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "fi-journey-bbce6",
+      storageBucket: "fi-journey-bbce6.firebasestorage.app",
+      messagingSenderId: "809551351059",
+      appId: "1:809551351059:web:c9813723cf7040cd4ddee6",
+      measurementId: "G-KNCX8R53QK"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+    const DB_REF = ref(database, 'reading-progress');
     const STORAGE_KEY = 'fiJourneyReadingProgress';
 
-    function loadReadingProgress() {
+    function getCheckboxes() {
+      return Array.from(document.querySelectorAll('input[data-book]'));
+    }
+
+    function applyProgress(progress = {}) {
+      getCheckboxes().forEach(checkbox => {
+        const bookId = checkbox.getAttribute('data-book');
+        checkbox.checked = progress[bookId] || false;
+      });
+    }
+
+    function loadReadingProgressLocal() {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        const progress = JSON.parse(saved);
-        document.querySelectorAll('input[data-book]').forEach(checkbox => {
-          const bookId = checkbox.getAttribute('data-book');
-          checkbox.checked = progress[bookId] || false;
-        });
+        applyProgress(JSON.parse(saved));
       }
     }
 
-    function saveReadingProgress() {
-      const progress = {};
-      document.querySelectorAll('input[data-book]').forEach(checkbox => {
-        const bookId = checkbox.getAttribute('data-book');
-        progress[bookId] = checkbox.checked;
-      });
+    function saveReadingProgressLocal(progress) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
     }
 
-    // Load progress on page load
-    document.addEventListener('DOMContentLoaded', loadReadingProgress);
+    async function loadReadingProgress() {
+      try {
+        const snapshot = await get(DB_REF);
+        if (snapshot.exists()) {
+          applyProgress(snapshot.val());
+        } else {
+          loadReadingProgressLocal();
+        }
+      } catch (error) {
+        console.warn('Firebase load failed, using local fallback:', error);
+        loadReadingProgressLocal();
+      }
+    }
 
-    // Save progress on checkbox change
-    document.querySelectorAll('input[data-book]').forEach(checkbox => {
-      checkbox.addEventListener('change', saveReadingProgress);
+    async function saveReadingProgress() {
+      const progress = {};
+      getCheckboxes().forEach(checkbox => {
+        const bookId = checkbox.getAttribute('data-book');
+        progress[bookId] = checkbox.checked;
+      });
+
+      try {
+        await set(DB_REF, progress);
+        saveReadingProgressLocal(progress);
+        console.log('Reading progress saved to Firebase');
+      } catch (error) {
+        console.warn('Firebase save failed, saving locally instead:', error);
+        saveReadingProgressLocal(progress);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadReadingProgress();
+      getCheckboxes().forEach(checkbox => {
+        checkbox.addEventListener('change', saveReadingProgress);
+      });
     });
   </script>
 </body>
