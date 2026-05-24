@@ -1,11 +1,6 @@
 // app.js - FI Journey Application
 
 const FI_JOURNEY_STATIC_PASSWORD = 'Freedom2026';
-const FI_JOURNEY_PROTECTED_PAGES = [
-  'portfolio.html',
-  'bucket-strategy.html',
-  'swp.html'
-];
 const FI_JOURNEY_AUTH_KEY = 'fiJourneyAuthenticated';
 
 console.log('FI Journey Website Loaded Successfully');
@@ -13,7 +8,7 @@ console.log('FI Journey Website Loaded Successfully');
 // Initialize app on page load
 document.addEventListener('DOMContentLoaded', function() {
   initializeNavigation();
-  checkProtectedPageAuth();
+  checkAuth();
   loadPortfolioData();
 });
 
@@ -22,12 +17,7 @@ function initializeNavigation() {
   console.log('Navigation initialized');
 }
 
-function checkProtectedPageAuth() {
-  const pageName = window.location.pathname.split('/').pop();
-  if (!FI_JOURNEY_PROTECTED_PAGES.includes(pageName)) {
-    return;
-  }
-
+function checkAuth() {
   const isAuthenticated = sessionStorage.getItem(FI_JOURNEY_AUTH_KEY) === 'true';
   if (isAuthenticated) {
     return;
@@ -37,7 +27,7 @@ function checkProtectedPageAuth() {
   let allowed = false;
 
   while (attempts < 3 && !allowed) {
-    const entry = prompt('Enter access password for this page:');
+    const entry = prompt('Enter the access password to continue browsing the site:');
     if (entry === null) {
       break;
     }
