@@ -266,10 +266,20 @@ footer {
   margin: 12px 0 14px;
 }
 
-.section-header p {
+/* Keep regular section paragraph copy muted, but allow eyebrow to keep theme color */
+.section-header p:not(.eyebrow) {
   color: #cbd5e1;
   line-height: 1.75;
   margin: 0;
+}
+
+.section-header .eyebrow {
+  color: #fbbf24;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .stats-grid {
@@ -340,16 +350,8 @@ footer {
 }
 
 .stage-card::before {
-  content: "";
-  position: absolute;
-  left: calc(50% - 12px);
-  top: 30px;
-  width: 24px;
-  height: 24px;
-  background: #0b122b;
-  border: 4px solid #fbbf24;
-  border-radius: 50%;
-  z-index: 1;
+  /* Decorative marker removed for a cleaner timeline look */
+  display: none;
 }
 
 .stage-card:hover {
