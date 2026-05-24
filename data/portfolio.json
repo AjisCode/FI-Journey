@@ -1,0 +1,82 @@
+{
+  "portfolio": {
+    "target": 532000000,
+    "current": 0,
+    "currency": "INR",
+    "stages": [
+      {
+        "id": 1,
+        "name": "Ganesh Stage",
+        "emoji": "🛕",
+        "target": 2500000,
+        "description": "Beginning the journey with strong foundations and blessings."
+      },
+      {
+        "id": 2,
+        "name": "Turtle Stage",
+        "emoji": "🐢",
+        "target": 5000000,
+        "description": "Slow and steady. SIP discipline and compounding begins."
+      },
+      {
+        "id": 3,
+        "name": "Bus Stage",
+        "emoji": "🚌",
+        "target": 7500000,
+        "description": "Momentum builds. Income grows and investments accelerate."
+      },
+      {
+        "id": 4,
+        "name": "Train Stage",
+        "emoji": "🚆",
+        "target": 10000000,
+        "description": "Strong acceleration. Wealth engine picks up significant speed."
+      },
+      {
+        "id": 5,
+        "name": "Flight Stage",
+        "emoji": "✈️",
+        "target": 20000000,
+        "description": "Life takes off. Financial freedom becomes visible on the horizon."
+      },
+      {
+        "id": 6,
+        "name": "Rocket Stage",
+        "emoji": "🚀",
+        "target": 30000000,
+        "description": "Hyper growth phase. Investments compound at maximum velocity."
+      },
+      {
+        "id": 7,
+        "name": "Freedom Stage",
+        "emoji": "💎",
+        "target": 40000000,
+        "description": "Financial independence achieved. Now it's about true choices in life."
+      },
+      {
+        "id": 8,
+        "name": "Life Upgrade Stage",
+        "emoji": "🏥",
+        "target": 50000000,
+        "description": "Additional capital for healthcare, experiences, and giving back."
+      }
+    ],
+    "buckets": {
+      "safety": {
+        "name": "Safety Bucket",
+        "allocation": 0.2,
+        "assets": []
+      },
+      "growth": {
+        "name": "Growth Bucket",
+        "allocation": 0.6,
+        "assets": []
+      },
+      "opportunity": {
+        "name": "Opportunity Bucket",
+        "allocation": 0.2,
+        "assets": []
+      }
+    }
+  }
+}
