@@ -67,15 +67,15 @@
           <h3>📖 Phase 1 — Core Foundation</h3>
           <div style="display: grid; gap: 12px;">
             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #cbd5e1;">
-              <input type="checkbox" style="cursor: pointer;" />
+              <input type="checkbox" data-book="psychology-of-money" style="cursor: pointer;" />
               <span>The Psychology of Money</span>
             </label>
             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #cbd5e1;">
-              <input type="checkbox" style="cursor: pointer;" />
+              <input type="checkbox" data-book="lets-talk-money" style="cursor: pointer;" />
               <span>Let's Talk Money</span>
             </label>
             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #cbd5e1;">
-              <input type="checkbox" style="cursor: pointer;" />
+              <input type="checkbox" data-book="simple-path-to-wealth" style="cursor: pointer;" />
               <span>The Simple Path to Wealth</span>
             </label>
           </div>
@@ -86,15 +86,15 @@
           <h3>📖 Phase 2 — Retirement Mechanics</h3>
           <div style="display: grid; gap: 12px;">
             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #cbd5e1;">
-              <input type="checkbox" style="cursor: pointer;" />
+              <input type="checkbox" data-book="how-to-make-money-last" style="cursor: pointer;" />
               <span>How to Make Your Money Last</span>
             </label>
             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #cbd5e1;">
-              <input type="checkbox" style="cursor: pointer;" />
+              <input type="checkbox" data-book="buckets-of-money" style="cursor: pointer;" />
               <span>Buckets of Money</span>
             </label>
             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #fbbf24; font-weight: 600;">
-              <input type="checkbox" style="cursor: pointer;" />
+              <input type="checkbox" data-book="living-off-your-money" style="cursor: pointer;" />
               <span>⭐ Living Off Your Money <em>(Most aligned with your strategy)</em></span>
             </label>
           </div>
@@ -105,11 +105,11 @@
           <h3>📖 Phase 3 — Philosophy & Advanced Thinking</h3>
           <div style="display: grid; gap: 12px;">
             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #cbd5e1;">
-              <input type="checkbox" style="cursor: pointer;" />
+              <input type="checkbox" data-book="your-money-your-life" style="cursor: pointer;" />
               <span>Your Money or Your Life</span>
             </label>
             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #cbd5e1;">
-              <input type="checkbox" style="cursor: pointer;" />
+              <input type="checkbox" data-book="die-with-zero" style="cursor: pointer;" />
               <span>Die With Zero</span>
             </label>
           </div>
@@ -123,5 +123,37 @@
   </footer>
 
   <script src="js/app.js"></script>
+  <script>
+    // Reading list progress tracker
+    const STORAGE_KEY = 'fiJourneyReadingProgress';
+
+    function loadReadingProgress() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const progress = JSON.parse(saved);
+        document.querySelectorAll('input[data-book]').forEach(checkbox => {
+          const bookId = checkbox.getAttribute('data-book');
+          checkbox.checked = progress[bookId] || false;
+        });
+      }
+    }
+
+    function saveReadingProgress() {
+      const progress = {};
+      document.querySelectorAll('input[data-book]').forEach(checkbox => {
+        const bookId = checkbox.getAttribute('data-book');
+        progress[bookId] = checkbox.checked;
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    }
+
+    // Load progress on page load
+    document.addEventListener('DOMContentLoaded', loadReadingProgress);
+
+    // Save progress on checkbox change
+    document.querySelectorAll('input[data-book]').forEach(checkbox => {
+      checkbox.addEventListener('change', saveReadingProgress);
+    });
+  </script>
 </body>
 </html>
