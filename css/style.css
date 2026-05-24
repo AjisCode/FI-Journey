@@ -241,9 +241,10 @@ footer {
 
 .eyebrow {
   color: #fbbf24;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 600;
   margin-bottom: 14px;
 }
 
