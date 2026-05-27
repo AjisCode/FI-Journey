@@ -638,6 +638,80 @@ footer {
   color: #fbbf24;
 }
 
+.portfolio-sheet {
+  padding-bottom: 80px;
+}
+
+.compact-top {
+  padding-top: 24px;
+}
+
+.sheet-card {
+  background: rgba(31, 41, 55, 0.88);
+  border: 1px solid #374151;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.sheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 820px;
+}
+
+.sheet-table th,
+.sheet-table td {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.92rem;
+}
+
+.sheet-table thead th {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fef3c7;
+  font-weight: 700;
+}
+
+.sheet-table tfoot td {
+  background: rgba(15, 23, 42, 0.65);
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.bucket-note {
+  text-align: center;
+  color: #d1d5db;
+  margin: -16px 0 20px;
+}
+
+.delta-text {
+  color: #fbbf24;
+  margin-top: 14px;
+  font-weight: 700;
+}
+
+.notes-card ol {
+  margin-left: 18px;
+  color: #d1d5db;
+  line-height: 1.8;
+}
+
+.quote-card {
+  text-align: center;
+}
+
+.quote-card p {
+  color: #fef3c7;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
 #password-modal {
   position: fixed;
   inset: 0;
@@ -774,5 +848,15 @@ footer {
 
   .nav-links {
     gap: 10px;
+  }
+
+  .sheet-card {
+    padding: 14px;
+  }
+
+  .sheet-table th,
+  .sheet-table td {
+    padding: 8px 9px;
+    font-size: 0.86rem;
   }
 }
