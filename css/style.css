@@ -908,8 +908,8 @@ footer {
 
 .discipline-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 28px;
 }
 
 .discipline-label {
@@ -1091,8 +1091,7 @@ footer {
     justify-content: center;
   }
 
-  .flow-variants,
-  .discipline-grid {
+  .flow-variants {
     grid-template-columns: 1fr;
   }
 }
