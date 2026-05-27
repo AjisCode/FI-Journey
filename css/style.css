@@ -642,6 +642,11 @@ footer {
   padding-bottom: 80px;
 }
 
+.portfolio-embed-container {
+  width: min(96vw, 1700px);
+  max-width: 1700px;
+}
+
 .compact-top {
   padding-top: 24px;
 }
@@ -718,7 +723,7 @@ footer {
 
 .workbook-embed {
   width: 100%;
-  min-height: 76vh;
+  min-height: 88vh;
   border: 0;
   border-radius: 12px;
   background: #0f172a;
@@ -882,12 +887,22 @@ footer {
   }
 
   .workbook-embed {
-    min-height: 68vh;
+    min-height: 74vh;
   }
 
   .sheet-table th,
   .sheet-table td {
     padding: 8px 9px;
     font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .portfolio-embed-container {
+    width: 95%;
+  }
+
+  .workbook-embed {
+    min-height: 84vh;
   }
 }
