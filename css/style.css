@@ -815,6 +815,92 @@ footer {
   vertical-align: baseline;
 }
 
+.flow-diagram {
+  display: grid;
+  gap: 16px;
+}
+
+.flow-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.flow-row-mid,
+.flow-row-bottom {
+  justify-content: space-between;
+}
+
+.flow-node {
+  flex: 1 1 240px;
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.flow-node h3 {
+  margin: 0 0 6px;
+  font-size: 1.04rem;
+}
+
+.flow-node p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.flow-node-b4 {
+  border-color: rgba(251, 191, 36, 0.5);
+}
+
+.flow-node-b3 {
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+.flow-node-b2 {
+  border-color: rgba(52, 211, 153, 0.5);
+}
+
+.flow-node-b1a,
+.flow-node-b1b {
+  border-color: rgba(244, 114, 182, 0.45);
+}
+
+.flow-node-expense {
+  border-color: rgba(251, 191, 36, 0.35);
+}
+
+.flow-arrow-row {
+  display: flex;
+  justify-content: center;
+}
+
+.flow-arrow-split {
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.flow-arrow {
+  display: inline-block;
+  color: #fbbf24;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.flow-footnote {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 12px;
+}
+
+.flow-footnote p {
+  margin: 0;
+  color: #fef3c7;
+  text-align: center;
+}
+
 #password-modal {
   position: fixed;
   inset: 0;
@@ -940,6 +1026,12 @@ footer {
 
   .stage-card::before {
     left: 12px;
+  }
+
+  .flow-row-mid,
+  .flow-row-bottom,
+  .flow-arrow-split {
+    justify-content: center;
   }
 }
 
