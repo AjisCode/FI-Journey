@@ -752,6 +752,69 @@ footer {
   text-decoration: underline;
 }
 
+.reminder-card {
+  margin-bottom: 18px;
+  padding: 12px;
+}
+
+.reminder-title {
+  margin: 2px 0 10px;
+  font-size: 1.05rem;
+  color: #fbbf24;
+}
+
+.reminder-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.02rem;
+}
+
+.reminder-table th,
+.reminder-table td {
+  border: 1px solid rgba(15, 23, 42, 0.35);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.reminder-table thead th {
+  background: #9bc37c;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.bucket-row-1 {
+  background: #e8d5c7;
+  color: #111827;
+}
+
+.bucket-row-2 {
+  background: #d4dde7;
+  color: #111827;
+}
+
+.bucket-row-3 {
+  background: #fff7cc;
+  color: #111827;
+}
+
+.bucket-row-4 {
+  background: #efe8c8;
+  color: #111827;
+}
+
+.think-as-cell {
+  white-space: nowrap;
+}
+
+.think-icon {
+  display: inline-block;
+  font-size: 0.95em;
+  width: 1.2em;
+  margin-right: 6px;
+  text-align: center;
+  vertical-align: baseline;
+}
+
 #password-modal {
   position: fixed;
   inset: 0;
@@ -897,6 +960,15 @@ footer {
   .workbook-embed {
     height: 72vh;
     min-height: 520px;
+  }
+
+  .reminder-table {
+    font-size: 0.9rem;
+  }
+
+  .reminder-table th,
+  .reminder-table td {
+    padding: 7px 8px;
   }
 
   .sheet-table th,
