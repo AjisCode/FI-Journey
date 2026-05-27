@@ -712,6 +712,33 @@ footer {
   line-height: 1.8;
 }
 
+.workbook-embed-card {
+  padding: 14px;
+}
+
+.workbook-embed {
+  width: 100%;
+  min-height: 76vh;
+  border: 0;
+  border-radius: 12px;
+  background: #0f172a;
+}
+
+.embed-help {
+  text-align: center;
+  color: #d1d5db;
+  margin: 0 0 14px;
+}
+
+.embed-help a {
+  color: #fbbf24;
+  text-decoration: none;
+}
+
+.embed-help a:hover {
+  text-decoration: underline;
+}
+
 #password-modal {
   position: fixed;
   inset: 0;
@@ -852,6 +879,10 @@ footer {
 
   .sheet-card {
     padding: 14px;
+  }
+
+  .workbook-embed {
+    min-height: 68vh;
   }
 
   .sheet-table th,
