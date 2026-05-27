@@ -40,6 +40,7 @@
       <h2 class="section-title">Corpus Plan At Retirement</h2>
       <div class="sheet-card">
         <p>Initial SWP target is Rs 1,00,000 per month (Rs 12,00,000 per year).</p>
+        <p>B1 is internally split as B1A (Emergency Untouchable) and B1B (Medical Reserve).</p>
         <p>Bucket construction is based on annual-expense multiples:</p>
         <div class="table-wrap">
           <table class="sheet-table" aria-label="Bucket target corpus">
@@ -56,7 +57,7 @@
                 <td>B1</td>
                 <td>4x</td>
                 <td>Rs 48L</td>
-                <td>Emergency reserve</td>
+                <td>Insurance bucket (B1A emergency + B1B medical)</td>
               </tr>
               <tr>
                 <td>B2</td>
@@ -121,7 +122,8 @@
         <ol>
           <li>SWR from B4 is 2.5% (Rs 12L on Rs 4.8Cr).</li>
           <li>Sequence-of-returns risk is reduced with B2 + B3 = 8 years of expense buffer.</li>
-          <li>B1 remains dedicated emergency capital, separate from monthly living expenses.</li>
+          <li>Monthly expenses are separated from emergency capital by paying regular SWP from B2.</li>
+          <li>B1 remains protected by using B1A only for emergencies and B1B for planned medical needs.</li>
         </ol>
       </div>
     </div>
@@ -129,24 +131,41 @@
 
   <section class="portfolio-section compact-top">
     <div class="container">
-      <h2 class="section-title">Return Assumptions</h2>
+      <h2 class="section-title">Return And Inflation Assumptions</h2>
       <div class="sheet-card table-wrap">
         <table class="sheet-table" aria-label="Expected returns">
           <thead>
             <tr>
               <th>Bucket</th>
-              <th>Expected Return</th>
+              <th>Expected Return (Gross)</th>
+              <th>Planning Return (Net Of Tax/Costs)</th>
               <th>Instrument Type</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>B1</td><td>7%</td><td>FD / Liquid Fund</td></tr>
-            <tr><td>B2</td><td>7%</td><td>Arbitrage / Liquid Fund</td></tr>
-            <tr><td>B3</td><td>9%</td><td>Balanced Advantage Funds</td></tr>
-            <tr><td>B4</td><td>10% (12% expected, 10% used)</td><td>Equity: Flexi, Index, Mid, Small</td></tr>
-            <tr><td>Inflation</td><td>6%</td><td>Planning assumption</td></tr>
+            <tr><td>B1</td><td>7%</td><td>5.5% to 6%</td><td>FD / Liquid Fund</td></tr>
+            <tr><td>B2</td><td>7%</td><td>5.5% to 6%</td><td>Arbitrage / Liquid Fund</td></tr>
+            <tr><td>B3</td><td>9%</td><td>7% to 8%</td><td>Balanced Advantage Funds</td></tr>
+            <tr><td>B4</td><td>10% (12% expected)</td><td>8% to 9%</td><td>Equity: Flexi, Index, Mid, Small</td></tr>
+            <tr><td>General Inflation</td><td>6%</td><td>6%</td><td>Core household expenses</td></tr>
+            <tr><td>Medical Inflation</td><td>10% to 12%</td><td>10% to 12%</td><td>Healthcare planning assumption</td></tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio-section compact-top">
+    <div class="container">
+      <h2 class="section-title">Withdrawal Flow Policy</h2>
+      <div class="sheet-card notes-card">
+        <ol>
+          <li>Regular monthly SWP is paid from B2 and indexed at 6% each year.</li>
+          <li>B1A is emergency-only and remains untouchable in normal years.</li>
+          <li>B1B handles planned medical expenses with annual review and refill if needed.</li>
+          <li>B3 is activated in prolonged market stress when B2 refill from B4 is paused.</li>
+          <li>B4 is used for planned yearly refill, not panic withdrawals.</li>
+        </ol>
       </div>
     </div>
   </section>
@@ -156,11 +175,12 @@
       <h2 class="section-title">Retirement Execution Rules</h2>
       <div class="sheet-card notes-card">
         <ol>
-          <li>SWP starts from B1 at Rs 1L per month and increases by 6% annually.</li>
-          <li>In bear markets, avoid withdrawing from B4.</li>
-          <li>In normal and high markets, draw from B4 gains to refill B2 annually.</li>
-          <li>From year 5 onward, allow around Rs 4L withdrawal from B3 for travel and hobbies.</li>
-          <li>From year 5 onward, estimate around Rs 2L per year medical withdrawal from B1.</li>
+          <li>Start SWP at Rs 1L/month and increase by 6% every year.</li>
+          <li>In bear markets, pause B4 withdrawals and run expenses through B2 plus B3 buffer.</li>
+          <li>In normal and strong markets, refill B2 annually from B4 using predefined rebalance windows.</li>
+          <li>From year 5 onward, allow around Rs 4L withdrawal from B3 for travel and hobbies only when guardrails permit.</li>
+          <li>From year 5 onward, budget around Rs 2L/year medical withdrawal from B1B and grow this budget at medical inflation.</li>
+          <li>If B4 drawdown exceeds 20%, freeze discretionary withdrawals until recovery.</li>
         </ol>
       </div>
     </div>
