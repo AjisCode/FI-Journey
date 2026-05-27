@@ -639,7 +639,7 @@ footer {
 }
 
 .portfolio-sheet {
-  padding-bottom: 80px;
+  padding-bottom: 48px;
 }
 
 .portfolio-embed-container {
@@ -722,11 +722,19 @@ footer {
 }
 
 .workbook-embed {
+  display: block;
   width: 100%;
-  min-height: 88vh;
+  height: calc(100vh - 260px);
+  min-height: 740px;
   border: 0;
   border-radius: 12px;
   background: #0f172a;
+}
+
+.embed-actions {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
 }
 
 .embed-help {
@@ -887,7 +895,8 @@ footer {
   }
 
   .workbook-embed {
-    min-height: 74vh;
+    height: 72vh;
+    min-height: 520px;
   }
 
   .sheet-table th,
@@ -903,6 +912,7 @@ footer {
   }
 
   .workbook-embed {
-    min-height: 84vh;
+    height: calc(100vh - 220px);
+    min-height: 680px;
   }
 }
