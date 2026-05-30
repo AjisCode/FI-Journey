@@ -7,18 +7,60 @@
   <link rel="icon" type="image/png" href="Images/Logo.png" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .book-link {
-      background: none;
-      border: 0;
-      padding: 0;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-      text-align: left;
+    .book-item-mapped {
+      display: grid;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.4);
     }
 
-    .book-link:hover {
+    .book-item-main {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #cbd5e1;
+    }
+
+    .book-action-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-left: 24px;
+    }
+
+    .book-action-links a {
+      color: #fbbf24;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .book-action-links a:hover {
       font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .book-preview-link {
+      margin-left: 24px;
+      max-width: 240px;
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .book-preview-link img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 640px) {
+      .book-action-links,
+      .book-preview-link {
+        margin-left: 0;
+      }
     }
   </style>
 </head>
@@ -92,12 +134,19 @@
               <input type="checkbox" data-book="lets-talk-money" style="cursor: pointer;" />
               <span>Let's Talk Money</span>
             </label>
-            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #cbd5e1;">
-              <input type="checkbox" data-book="simple-path-to-wealth" style="cursor: pointer;" />
-              <button type="button" class="book-link" data-open-book="simple-path-to-wealth">
-                The Simple Path to Wealth <span style="color: #fbbf24; font-weight: 700;" aria-hidden="true">+</span>
-              </button>
-            </label>
+            <div class="book-item-mapped">
+              <div class="book-item-main">
+                <input type="checkbox" data-book="simple-path-to-wealth" style="cursor: pointer;" />
+                <span>The Simple Path to Wealth</span>
+              </div>
+              <div class="book-action-links">
+                <a href="data/FI-Books/The%20Simple%20Path%20To%20Wealth.pdf" target="_blank" rel="noopener">Open PDF</a>
+                <a href="Images/Books%20Summary/The_Simple_Path_To_Wealth_Exec_Infographic.png" target="_blank" rel="noopener">Infographic Summary</a>
+              </div>
+              <a class="book-preview-link" href="Images/Books%20Summary/The_Simple_Path_To_Wealth_Exec_Infographic.png" target="_blank" rel="noopener">
+                <img src="Images/Books%20Summary/The_Simple_Path_To_Wealth_Exec_Infographic.png" alt="The Simple Path to Wealth executive summary infographic" loading="lazy" />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -167,9 +216,6 @@
     const MODE_KEY = 'fiJourneyReadingMode';
     const READ_MODE = 'read';
     const WRITE_MODE = 'write';
-    const BOOK_PDF_MAP = {
-      'simple-path-to-wealth': 'data/FI-Books/The%20Simple%20Path%20To%20Wealth.pdf'
-    };
 
     function getCheckboxes() {
       return Array.from(document.querySelectorAll('input[data-book]'));
@@ -191,15 +237,6 @@
 
     function saveReadingProgressLocal(progress) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-    }
-
-    function openBookPdf(bookId) {
-      const pdfPath = BOOK_PDF_MAP[bookId];
-      if (!pdfPath) {
-        return;
-      }
-
-      window.open(pdfPath, '_blank', 'noopener,noreferrer');
     }
 
     function setReadMode(enabled) {
@@ -274,14 +311,6 @@
 
       getCheckboxes().forEach(checkbox => {
         checkbox.addEventListener('change', saveReadingProgress);
-      });
-
-      document.querySelectorAll('[data-open-book]').forEach(button => {
-        button.addEventListener('click', event => {
-          event.preventDefault();
-          event.stopPropagation();
-          openBookPdf(button.getAttribute('data-open-book'));
-        });
       });
     });
   </script>
