@@ -79,8 +79,8 @@
             </label>
             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #cbd5e1;">
               <input type="checkbox" data-book="simple-path-to-wealth" style="cursor: pointer;" />
-              <button type="button" data-open-book="simple-path-to-wealth" style="background: none; border: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; text-align: left;">
-                The Simple Path to Wealth
+              <button type="button" data-open-book="simple-path-to-wealth" data-book-tooltip="PDF available - opens in a new tab" title="PDF available - opens in a new tab" style="background: none; border: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; text-align: left;">
+                The Simple Path to Wealth <span style="color: #fbbf24; font-weight: 700;" aria-hidden="true">+</span>
               </button>
             </label>
           </div>
@@ -262,6 +262,11 @@
       });
 
       document.querySelectorAll('[data-open-book]').forEach(button => {
+        const tooltip = button.getAttribute('data-book-tooltip');
+        if (tooltip) {
+          button.setAttribute('aria-label', `${button.textContent.trim().replace(/\s*\+\s*$/, '')}. ${tooltip}`);
+        }
+
         button.addEventListener('click', event => {
           event.preventDefault();
           event.stopPropagation();
