@@ -7,58 +7,34 @@
   <link rel="icon" type="image/png" href="Images/Logo.png" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .book-item-mapped {
-      display: grid;
-      gap: 10px;
-      padding: 10px 12px;
-      border: 1px solid rgba(251, 191, 36, 0.25);
-      border-radius: 10px;
-      background: rgba(15, 23, 42, 0.4);
-    }
-
-    .book-item-main {
+    .book-link-row {
       display: flex;
       align-items: center;
       gap: 10px;
       color: #cbd5e1;
+      flex-wrap: wrap;
     }
 
-    .book-action-links {
+    .book-link-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-left: 24px;
+      margin-left: 28px;
     }
 
-    .book-action-links a {
+    .book-link-actions a {
       color: #fbbf24;
       text-decoration: none;
       font-size: 0.95rem;
     }
 
-    .book-action-links a:hover {
+    .book-link-actions a:hover {
       font-weight: 700;
       text-decoration: underline;
     }
 
-    .book-preview-link {
-      margin-left: 24px;
-      max-width: 240px;
-      display: block;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-    }
-
-    .book-preview-link img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
     @media (max-width: 640px) {
-      .book-action-links,
-      .book-preview-link {
+      .book-link-actions {
         margin-left: 0;
       }
     }
@@ -134,18 +110,13 @@
               <input type="checkbox" data-book="lets-talk-money" style="cursor: pointer;" />
               <span>Let's Talk Money</span>
             </label>
-            <div class="book-item-mapped">
-              <div class="book-item-main">
+            <div class="book-link-row">
                 <input type="checkbox" data-book="simple-path-to-wealth" style="cursor: pointer;" />
                 <span>The Simple Path to Wealth</span>
-              </div>
-              <div class="book-action-links">
+              <div class="book-link-actions">
                 <a href="data/FI-Books/The%20Simple%20Path%20To%20Wealth.pdf" target="_blank" rel="noopener">Open PDF</a>
-                <a href="Images/Books%20Summary/The_Simple_Path_To_Wealth_Exec_Infographic.png" target="_blank" rel="noopener">Infographic Summary</a>
+                <a href="#summary-simple-path-to-wealth">Go to Summary</a>
               </div>
-              <a class="book-preview-link" href="Images/Books%20Summary/The_Simple_Path_To_Wealth_Exec_Infographic.png" target="_blank" rel="noopener">
-                <img src="Images/Books%20Summary/The_Simple_Path_To_Wealth_Exec_Infographic.png" alt="The Simple Path to Wealth executive summary infographic" loading="lazy" />
-              </a>
             </div>
           </div>
         </div>
@@ -183,6 +154,22 @@
             </label>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio-section compact-top" id="book-summaries">
+    <div class="container">
+      <h2 class="section-title">Book Summaries</h2>
+      <div class="sheet-card">
+        <h3 id="summary-simple-path-to-wealth" style="margin-top: 0;">The Simple Path To Wealth - Executive Infographic</h3>
+        <p class="embed-help" style="margin-bottom: 14px;">Quick summary visual for the core concepts in this book.</p>
+        <figure class="flow-figure" style="margin: 0;">
+          <a href="Images/Books%20Summary/The_Simple_Path_To_Wealth_Exec_Infographic.png" target="_blank" rel="noopener">
+            <img src="Images/Books%20Summary/The_Simple_Path_To_Wealth_Exec_Infographic.png" alt="The Simple Path To Wealth executive infographic summary" loading="lazy" />
+          </a>
+          <figcaption>Click the image to open full size.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
