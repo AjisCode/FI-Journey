@@ -79,7 +79,9 @@
             </label>
             <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; color: #cbd5e1;">
               <input type="checkbox" data-book="simple-path-to-wealth" style="cursor: pointer;" />
-              <span>The Simple Path to Wealth</span>
+              <button type="button" data-open-book="simple-path-to-wealth" style="background: none; border: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; text-align: left;">
+                The Simple Path to Wealth
+              </button>
             </label>
           </div>
         </div>
@@ -150,6 +152,9 @@
     const MODE_KEY = 'fiJourneyReadingMode';
     const READ_MODE = 'read';
     const WRITE_MODE = 'write';
+    const BOOK_PDF_MAP = {
+      'simple-path-to-wealth': 'data/FI-Books/The%20Simple%20Path%20To%20Wealth.pdf'
+    };
 
     function getCheckboxes() {
       return Array.from(document.querySelectorAll('input[data-book]'));
@@ -171,6 +176,15 @@
 
     function saveReadingProgressLocal(progress) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    }
+
+    function openBookPdf(bookId) {
+      const pdfPath = BOOK_PDF_MAP[bookId];
+      if (!pdfPath) {
+        return;
+      }
+
+      window.open(pdfPath, '_blank', 'noopener,noreferrer');
     }
 
     function setReadMode(enabled) {
@@ -245,6 +259,14 @@
 
       getCheckboxes().forEach(checkbox => {
         checkbox.addEventListener('change', saveReadingProgress);
+      });
+
+      document.querySelectorAll('[data-open-book]').forEach(button => {
+        button.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          openBookPdf(button.getAttribute('data-open-book'));
+        });
       });
     });
   </script>
